@@ -25,7 +25,7 @@ public class Security {
     private String name;
 
 
-    
+
     protected Security(){
 
     }
@@ -43,12 +43,7 @@ public class Security {
     private String category;
 
 
-    @Override
-    public String toString() {
-        return "Security [securityId=" + securityId + ", portfolio=" + portfolio + ", name=" + name + ", category="
-                + category + ", purchasPrice=" + purchasPrice + ", puchaseDate=" + puchaseDate + ", quantity="
-                + quantity + "]";
-    }
+    
 
     @Column(nullable = false)
     private Float purchasPrice;
@@ -116,6 +111,11 @@ public class Security {
     }
     
 
-
+@Override
+    public String toString() {
+        return "Security [securityId=" + securityId + ", portfolio=" + portfolio + ", name=" + name + ", category="
+                + category + ", purchasPrice=" + purchasPrice + ", puchaseDate=" + puchaseDate + ", quantity="
+                + quantity + "]";
+    }
 
 }
