@@ -12,10 +12,13 @@ function App() {
 
     </header>
     <main id='form-body'>
+      
       <label>email</label>
       <input type='text' ></input>
       <label>Password</label>
-      <input></input>
+      <input type='text'></input>
+      <button id = "submit">Login</button>
+
 
     </main>
 
