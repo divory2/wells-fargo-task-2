@@ -35,3 +35,24 @@
   width: 50px;
   background: linear-gradient(to bottom, orange, red);
 }
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full page */
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent overlay */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* light grey */
+  border-top: 8px solid #3498db; /* blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite; /* rotate forever */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
