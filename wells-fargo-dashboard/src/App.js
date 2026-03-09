@@ -1,7 +1,27 @@
 import './App.css';
-
+import {useRef} from "react";
 function App() {
+  const inputRef = useRef(null);
+  const emailRef = useRef(null);
+  const submit =() =>{
+    
+    const emailInput = emailRef.current;
+    const passwordInput = inputRef.current;
+
+  if (!emailInput.checkValidity() || !passwordInput.checkValidity()) { // ✅ catches invalid email
+    alert(emailInput.validationMessage +" " + passwordInput.validationMessage); // shows built-in message
+    return;
+  }
+  
+ 
+   
+    
+
+   
+    
+}
   return (
+    
     <>
     <header>
       <div id="title">
@@ -14,10 +34,10 @@ function App() {
     <main id='form-body'>
       
       <label>email</label>
-      <input type='text' ></input>
+      <input id = "email" required ref={emailRef} type ='email' ></input>
       <label>Password</label>
-      <input type='text'></input>
-      <button id = "submit">Login</button>
+      <input required type='text' ref={inputRef}></input>
+      <button id = "submit" onClick={submit}>Login</button>
 
 
     </main>
