@@ -7,8 +7,8 @@
   gap: 300px;
   border-radius: 2px red;
   border: solid red;
-  background: linear-gradient(to bottom,red , gold )  ;
-  
+  background: linear-gradient(to top right,red , gold, blue )  ;
+
 
 }
 #dash-title{
@@ -18,7 +18,7 @@
 }
 #form-body{
   display:grid;
-  background: linear-gradient(to bottom, orange, red );
+  background: linear-gradient(to right, rgb(0, 78, 203), red,purple,#b5f9ff);
   
  
   justify-content:center;
