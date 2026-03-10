@@ -11,7 +11,7 @@ function App() {
     const passwordInput = inputRef.current;
 
   if (!emailInput.checkValidity() || !passwordInput.checkValidity()) { // ✅ catches invalid email
-    alert(emailInput.validationMessage +" " + passwordInput.validationMessage); // shows built-in message
+    alert(emailInput.validationMessage? emailInput.validationMessage + " email":""+" " + passwordInput.validationMessage ? passwordInput.validationMessage + "password":""); // shows built-in message
     return;
   } 
   setLoading(true)
@@ -42,7 +42,7 @@ function App() {
 
       <div id="title">
         {/* <img src='wells-fargo-dashboard/public/wells-Fargo.png' alt='logo'> </img> */}
-        <img src='/wells-Fargo.png' alt='wellsFargo'></img>
+        <img src='/wells-Fargo.png' alt='wellsFargo' data-testid = "wellsFargo"></img>
         <div id="dash-title">Dash Board Login</div>
       </div>
 
@@ -53,7 +53,7 @@ function App() {
         <div className='spinner'></div>
       </div>
     ) :(
-      <><label>email</label><input id="email" required ref={emailRef} type='email'></input><label>Password</label><input required type='text' ref={inputRef}></input><button id="submit" onClick={submit}>Login</button></>
+      <><label htmlFor="email">email</label><input id="email"  data-testid="email" required ref={emailRef} type='email'></input><label htmlFor='password'>Password</label><input required type='text' ref={inputRef} id='password' data-testid="password"></input><button id="submit" onClick={submit}>Login</button></>
     )}
   
     </main>
