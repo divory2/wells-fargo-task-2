@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-
-test('renders learn react link', () => {
+// import axios from 'axios';
+jest.mock('axios');
+test('renders Dash Board Title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const dashboardTitle = screen.getByText(/Dash Board Login/i);
+  expect(dashboardTitle).toBeInTheDocument();
 });
