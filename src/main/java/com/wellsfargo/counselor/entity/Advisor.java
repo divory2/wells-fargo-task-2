@@ -27,9 +27,20 @@ public class Advisor {
 
     @Column(nullable = false)
     private String email;
+    @Column (nullable = false)
+    private String password;
 
     protected Advisor() {
 
+    }
+
+    public Advisor(String firstName, String lastName, String address, String phone, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
     public Advisor(String firstName, String lastName, String address, String phone, String email) {
@@ -82,5 +93,11 @@ public class Advisor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Advisor [advisorId=" + advisorId + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
+                + address + ", phone=" + phone + ", email=" + email + ", password=" + password + "]";
     }
 }
