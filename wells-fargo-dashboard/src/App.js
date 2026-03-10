@@ -16,8 +16,9 @@ function App() {
   } 
   setLoading(true)
     try{
-      const response = await axios.post("/api/login", 
-        { emailInput, 
+      const response = await axios.post("https:/localhost:3001/api/v1/advisor", 
+        { 
+          emailInput, 
           passwordInput 
 
         });
