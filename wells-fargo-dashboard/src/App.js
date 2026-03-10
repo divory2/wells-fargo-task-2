@@ -11,7 +11,7 @@ function App() {
     const passwordInput = inputRef.current;
 
   if (!emailInput.checkValidity() || !passwordInput.checkValidity()) { // ✅ catches invalid email
-    alert(emailInput.validationMessage? emailInput.validationMessage + " email":""+" " + passwordInput.validationMessage ? passwordInput.validationMessage + "password":""); // shows built-in message
+    alert((emailInput.validationMessage? emailInput.validationMessage + ": email":"") + " " + (passwordInput.validationMessage ? passwordInput.validationMessage + ": password":"")); // shows built-in message
     return;
   } 
   setLoading(true)
@@ -49,11 +49,11 @@ function App() {
     </header>
     <main id='form-body'>
       {loading ? (
-      <div className='loading-container'>
-        <div className='spinner'></div>
+      <div className='loading-container' id='loding'>
+        <div className='spinner' id='spinner'></div>
       </div>
     ) :(
-      <><label htmlFor="email">email</label><input id="email"  data-testid="email" required ref={emailRef} type='email'></input><label htmlFor='password'>Password</label><input required type='text' ref={inputRef} id='password' data-testid="password"></input><button id="submit" onClick={submit}>Login</button></>
+      <><label htmlFor="email">email</label><input id="email"  data-testid="email" required ref={emailRef} type='email'></input><label htmlFor='password'>Password</label><input required type='text' ref={inputRef} id='password' data-testid="password"></input><button id="login" onClick={submit}>Login</button></>
     )}
   
     </main>
