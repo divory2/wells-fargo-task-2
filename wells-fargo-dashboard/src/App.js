@@ -6,6 +6,7 @@ function App() {
   const emailRef = useRef(null);
   const [loading,setLoading] = useState(false);
   const submit =async () =>{
+    const url = proceess.env.REACT_APP_LOGIN_URL
     
     const emailInput = emailRef.current;
     const passwordInput = inputRef.current;
@@ -16,7 +17,7 @@ function App() {
   } 
   setLoading(true)
     try{
-      const response = await axios.post("https:/localhost:3001/api/v1/advisor", 
+      const response = await axios.post(url, 
         { 
           emailInput, 
           passwordInput 
